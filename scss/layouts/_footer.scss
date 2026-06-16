@@ -1,8 +1,9 @@
 .footer {
   padding: 32px 0;
   position: relative;
-  background-color: rgba(49, 38, 26, 1);
-  background-image: url('../images/footer-background.png');
+  background-image:
+    linear-gradient(rgba(49, 38, 26, 1), rgba(46, 47, 66, 0.7)),
+    url('../images/footer-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -15,45 +16,73 @@
     content: '';
   }
   &::before {
-    width: 180px;
-    height: 120px;
-    left: 0;
-    background-image: url('../images/pane-solo.png');
+    top: 0;
+    margin-top: 60px;
+    width: 92px;
+    height: 196px;
+
+    background-image: url('../images/pane-solo-mob.png');
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 180px;
+      height: 120px;
+      left: 0;
+      background-image: url('../images/pane-solo.png');
+    }
   }
 
   &::after {
-    width: 360px;
-    height: 190px;
+    width: 102px;
+    height: 92px;
     right: 0;
-    background-image: url('../images/panine.png');
+    background-image: url('../../images/panine-mobile.png');
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 360px;
+      height: 190px;
+      background-image: url('../images/panine-desctop.png');
+    }
   }
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
 
     @media screen and (min-width: $bp-tablet) {
-      display: row;
+      flex-direction: row;
+      gap: 20px;
     }
   }
 
   &__logo,
   &__menu {
-    flex-grow: 1;
+    @media screen and (min-width: $bp-tablet) {
+      flex-grow: 1;
+    }
+  }
+  &__logo {
+    margin-bottom: 32px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 18px;
   }
 
   &__nav,
   &__address {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     text-align: center;
 
     @media screen and (min-width: $bp-tablet) {
-      display: row;
+      flex-direction: row;
       flex-basis: 50%;
       text-align: left;
+      gap: 20px;
     }
   }
 
@@ -61,16 +90,36 @@
   &__address-info {
     flex-grow: 1;
   }
+  &__address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
 
   &__address-link {
     color: var(--color-primary-liht);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     text-decoration: none;
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 16px;
+    }
   }
 
   &__address-link:hover {
     color: var(--color-primary-liht);
+  }
+  &__addres-contacts {
+    margin-bottom: 16px;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 8px;
   }
 
   &__address-icon {
@@ -80,9 +129,19 @@
   &__address-icon:hover {
     fill: var(--color-brend-normal);
   }
+  &__address-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 
   &__address-copyriqht {
     align-items: flex-end;
-    font-size: 14px;
+    font-size: 12px;
+    color: var(--color-secondari-dark);
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 14px;
+    }
   }
 }

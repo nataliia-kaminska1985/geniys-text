@@ -85,16 +85,14 @@
               <h2 class="traditions-section__title section__title">
                 Новий формат традицій
               </h2>
-              <p>
+              <p class="traditions-section__text">
                 <span class="text-brand text-bold text-uppercase">
                   shor bakery
                 </span>
                 - це пекарня, яка взяла все накраще, зберегла смак традиційної
                 випічки та натуральність інгредієнтів.
               </p>
-              <p
-                class="traditions-section__text traditions-section__text--limited"
-              >
+              <p class="traditions-section__text--limited">
                 Ми працюємо як найвідоміші мережі-
                 <span class="text-brand text-bold"
                   >5 хвилин замовлення готове</span
@@ -284,9 +282,11 @@
           <div class="contact-section__container">
             <div class="contact-section__form">
               <h2 class="contact-section__title section__title">
-                Приєднуйся до <span class="nowrap">мережі пекарень</span>
+                Приєднуйся до мережі пекарень
               </h2>
-              <p>Заповни форму, щоб ми звязались з тобою!</p>
+              <p class="contact-section__text">
+                Заповни форму, щоб ми звязались з тобою!
+              </p>
               <form name="contact-form" autocomplete="off">
                 <div class="contact-section__form-field input">
                   <label class="input__label visually-hidden" for="user-name"
@@ -328,7 +328,7 @@
                 <button class="contact-section__button button" type="submit">
                   Замовити дзінок
                 </button>
-                <p class="form-terms">
+                <p class="contact-section__terms form-terms">
                   Натискаючи на кнопку я погоджуюся з
                   <a class="form-terms__link" href="#"
                     >політикою конфіденційності</a
@@ -358,11 +358,23 @@
 
             <ul class="footer__menu">
               <li>
-                <a class="link" href="#traditions-section">Наші трaдиції</a>
+                <a class="footer__link link" href="#traditions-section"
+                  >Наші трaдиції</a
+                >
               </li>
-              <li><a class="link" href="#cheft-section">Шеф-кухарі</a></li>
-              <li><a class="link" href="#formats-section">Формати</a></li>
-              <li><a class="link" href="#contact-section">Контакти</a></li>
+              <li>
+                <a class="footer__link link" href="#cheft-section"
+                  >Шеф-кухарі</a
+                >
+              </li>
+              <li>
+                <a class="footer__link link" href="#formats-section">Формати</a>
+              </li>
+              <li>
+                <a class="footer__link link" href="#contact-section"
+                  >Контакти</a
+                >
+              </li>
             </ul>
           </nav>
           <address class="footer__address">
@@ -374,7 +386,9 @@
                   >
                 </li>
                 <li>
-                  <a class="address-link" href="mailto:shopbakery@gmail.com"
+                  <a
+                    class="footer__address-link"
+                    href="mailto:shopbakery@gmail.com"
                     >shopbakery@gmail.com</a
                   >
                 </li>
@@ -388,7 +402,7 @@
                   </a>
                 </li>
               </ul>
-              <div class="">
+              <div class="footer__social">
                 <a href="t">
                   <svg class="footer__address-icon" width="32" height="32">
                     <use href="./images/icons.svg#icon-facebook"></use>
@@ -396,7 +410,7 @@
                 </a>
 
                 <a href="i">
-                  <svg class="address-icon" width="32" height="32">
+                  <svg class="footer__address-icon" width="32" height="32">
                     <use href="./images/icons.svg#icon-instagram"></use>
                   </svg>
                 </a>
@@ -418,8 +432,8 @@
         <button class="modal__btn-close modal-btn-close" type="button">
           Close
         </button>
-        <h2 class="modal-title">Замовити дзвінок</h2>
-        <p class="centered">
+        <h2 class="modal__title">Замовити дзвінок</h2>
+        <p class="modal__text">
           Залишіть заявку та наш спеціаліст зв'яжеться з Вами!
         </p>
         <form name="modal-form" autocomplete="off">
