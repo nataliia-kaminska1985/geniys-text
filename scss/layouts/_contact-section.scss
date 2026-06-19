@@ -1,5 +1,5 @@
 .contact-section {
-  padding: 0;
+  margin-top: 20px;
 
   &__container {
     display: flex;
@@ -14,22 +14,21 @@
   &__title {
     font-weight: 600;
     font-size: 32px;
-    line-height: 1;
     text-align: center;
     margin-bottom: 8px;
 
     @media screen and (min-width: $bp-tablet) {
+      font-size: 64px;
       text-align: left;
       margin-bottom: 16px;
     }
   }
   &__text {
-    font-size: 14px;
-    line-height: 1;
     margin-bottom: 24px;
 
     @media screen and (min-width: $bp-tablet) {
       margin-bottom: 42px;
+      line-height: 1;
     }
   }
   &__form-field {

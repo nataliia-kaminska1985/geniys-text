@@ -17,7 +17,9 @@
         <div class="header__container">
           <nav class="header__nav">
             <a href="./index.html">
-              <img src="./images/logo.svg" alt="Логотип сучасної пекарні" />
+              <svg class="logo__header logo">
+                <use href="./images/icons.svg#icon-logo"></use>
+              </svg>
             </a>
             <ul class="header__menu">
               <li>
@@ -43,9 +45,40 @@
             </svg>
           </button>
           <div class="mobile-menu">
-            <button class="mobile-menu__btn-close menu-btn-close" type="button">
-              Close
-            </button>
+            <button
+              class="btn-close btn-close--mobile-menu menu-btn-close"
+              type="button"
+            ></button>
+            <nav class="mobile-menu__nav">
+              <a href="./index.html">
+                <svg class="logo logo__mobile" width="72" height="38">
+                  <use href="./images/icons.svg#icon-logo"></use>
+                </svg>
+              </a>
+              <ul class="mobile-menu__list">
+                <li>
+                  <a class="mobile-menu__link link" href="#traditions-section"
+                    >Наші трaдиції</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu__link link" href="#cheft-section"
+                    >Шеф-кухарі</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu__link link" href="#formats-section"
+                    >Формати</a
+                  >
+                </li>
+                <li>
+                  <a class="mobile-menu__link link" href="#contact-section"
+                    >Контакти</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div class="mobile-menu__decor"></div>
           </div>
         </div>
       </div>
@@ -126,7 +159,7 @@
                 <div>
                   <h3 class="chef-card__title">Настя</h3>
                   <div class="chef-card__text">
-                    <p>Привіт, я Настя!</p>
+                    <p class="chef-card__text">Привіт, я Настя!</p>
                     <p class="chef-card__text">
                       Вже 10 років, я втілюю <br />
                       у життя цікаві та смачні ідеї
@@ -240,17 +273,18 @@
                   <article class="format-card">
                     <img
                       class="format-card__image"
-                      src="./images/horseshoe-format.png"
-                      alt="Horseshoe format"
+                      src="./images/walrus-format.jpg"
+                      alt="Walrus format"
                     />
-                    <h3 class="format-card__title" lang="en">Horseshoe</h3>
+                    <h3 class="format-card__title" lang="en">Walrus</h3>
                     <div class="format-card__text">
-                      <p>Площа: до 20 м2</p>
-                      <p>Меню: найпопулярніші позиції меню.</p>
+                      <p>Площа: до 120 м2</p>
+                      <p>Меню: розширене меню.</p>
                       <p>
-                        Штат: 2 продавці-касири, 2 пекарі і помічник пекаря.
+                        Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
+                        офіціанти-різнороби
                       </p>
-                      <p>Посадкові місця: відсутні</p>
+                      <p>Посадкові місця: є</p>
                     </div>
                   </article>
                 </li>
@@ -277,11 +311,11 @@
           </div>
         </div>
       </section>
-      <section class="contact-section section" id="contact-section">
+      <section class="contact-section" id="contact-section">
         <div class="container">
           <div class="contact-section__container">
             <div class="contact-section__form">
-              <h2 class="contact-section__title section__title">
+              <h2 class="contact-section__title">
                 Приєднуйся до мережі пекарень
               </h2>
               <p class="contact-section__text">
@@ -351,8 +385,10 @@
         <div class="footer__container">
           <nav class="footer__nav">
             <div class="footer__logo">
-              <a href="./indexs.html">
-                <img src="./images/logo.svg" alt="Логотип сучасної пекарні" />
+              <a href="./index.html">
+                <svg class="logo__footer logo">
+                  <use href="./images/icons.svg#icon-logo"></use>
+                </svg>
               </a>
             </div>
 
@@ -427,11 +463,12 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop">
+    <div class="backdrop is-hidden">
       <div class="modal">
-        <button class="modal__btn-close modal-btn-close" type="button">
-          Close
-        </button>
+        <button
+          class="btn-close btn-close--modal modal-btn-close"
+          type="button"
+        ></button>
         <h2 class="modal__title">Замовити дзвінок</h2>
         <p class="modal__text">
           Залишіть заявку та наш спеціаліст зв'яжеться з Вами!
@@ -495,6 +532,7 @@
             <a class="form-terms__link" href="#">політикою конфіденційності</a>
           </p>
         </form>
+        <div class="modal__decor"></div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>

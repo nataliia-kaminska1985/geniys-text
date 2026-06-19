@@ -43,8 +43,9 @@
 
 body {
   color: var(--color-primary-dark);
+  background-color: var(--color-primary-liht);
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
   margin: 0;
@@ -53,6 +54,7 @@ body {
   body {
     font-size: 18px;
     font-weight: 400;
+    line-height: 1.3;
   }
 }
 
@@ -76,6 +78,7 @@ img {
 }
 
 a {
+  color: inherit;
   display: inline-block;
 }
 
@@ -114,6 +117,41 @@ ul {
   overflow: hidden;
 }
 
+.btn-close {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.btn-close::before, .btn-close::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--color-primary-dark);
+}
+.btn-close::before {
+  transform: rotate(45deg);
+}
+.btn-close::after {
+  transform: rotate(-45deg);
+}
+.btn-close--mobile-menu {
+  top: 16px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+}
+.btn-close--modal {
+  top: 40px;
+  right: 40px;
+  width: 32px;
+  height: 32px;
+}
+
 .button {
   display: block;
   padding: 10px 24px;
@@ -132,7 +170,7 @@ ul {
 }
 .button:hover {
   color: var(--color-brend-dark);
-  background-color: transparent;
+  background-color: var(--color-primary-liht);
 }
 
 .carousel-button {
@@ -220,20 +258,21 @@ ul {
 }
 .format-card__image {
   position: absolute;
-  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 .format-card__title {
   font-size: 24px;
   font-weight: 600;
   color: var(--color-primary-liht);
+  margin-bottom: 8px;
+  z-index: 1;
 }
 .format-card__text {
-  font-size: 14px;
-  font-weight: 300;
+  z-index: 1;
   color: var(--color-primary-liht);
 }
 
@@ -246,13 +285,18 @@ ul {
   left: 42px;
 }
 .input__control {
-  padding: 16px 42px;
+  padding: 8px 24px;
   width: 100%;
   font-size: 16px;
-  line-height: 1.17;
   border: 1px solid var(--color-secondari-dark);
   border-radius: 8px;
   background-color: transparent;
+}
+@media screen and (min-width: 768px) {
+  .input__control {
+    padding: 16px 42px;
+    line-height: 1.17;
+  }
 }
 .input__control:focus {
   border-color: var(--color-brend-normal);
@@ -280,9 +324,31 @@ ul {
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .link:hover {
   color: var(--color-brend-normal);
+}
+
+.logo {
+  width: 72px;
+  height: 38px;
+}
+.logo__header, .logo__footer {
+  fill: var(--color-primary-liht);
+}
+@media screen and (min-width: 768px) {
+  .logo__header {
+    width: 114px;
+    height: 56px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logo__footer {
+    width: 108px;
+    height: 57px;
+  }
+}
+.logo__mobile {
+  color: var(--color-primary-dark);
 }
 
 .pagination {
@@ -308,6 +374,7 @@ ul {
 @media screen and (min-width: 768px) {
   .advantages-section {
     background-color: var(--color-brend-normal);
+    margin-bottom: 0;
   }
 }
 .advantages-section__list {
@@ -325,27 +392,26 @@ ul {
     gap: 40px;
     background-color: transparent;
     border-radius: 0;
-    padding: 0;
+    padding: 16px 0;
   }
 }
 .advantages-section__item {
   font-size: 14px;
-  line-height: 1;
 }
 @media screen and (min-width: 768px) {
   .advantages-section__item {
     color: var(--color-primary-liht);
     font-size: 20px;
+    text-align: center;
   }
 }
 
 .chefs-section__title {
-  position: relative;
   margin: 0 auto 24px;
 }
 @media screen and (min-width: 1280px) {
   .chefs-section__title {
-    margin-bottom: 80px;
+    position: relative;
   }
 }
 .chefs-section__title::before, .chefs-section__title::after {
@@ -388,43 +454,54 @@ ul {
 .footer {
   padding: 32px 0;
   position: relative;
+  overflow: hidden;
   background-image: linear-gradient(rgb(49, 38, 26), rgba(46, 47, 66, 0.7)), url("../images/footer-background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.footer::before, .footer::after {
-  position: absolute;
-  bottom: 0;
-  background-repeat: no-repeat;
-  content: "";
-}
 .footer::before {
-  top: 0;
-  margin-top: 60px;
+  position: absolute;
+  content: "";
+  top: 48px;
+  left: -50px;
   width: 92px;
   height: 196px;
-  background-image: url("../images/pane-solo-mob.png");
+  background-image: url("../images/bread-single.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(32deg);
 }
 @media screen and (min-width: 768px) {
   .footer::before {
+    top: 110px;
+    left: -72px;
     width: 180px;
-    height: 120px;
-    left: 0;
-    background-image: url("../images/pane-solo.png");
+    height: 342px;
+    background-image: url("../images/bread-single.png");
+    transform: rotate(10.4deg);
   }
 }
 .footer::after {
-  width: 102px;
-  height: 92px;
-  right: 0;
-  background-image: url("../../images/panine-mobile.png");
+  position: absolute;
+  content: "";
+  bottom: -100px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  background-image: url("../../images/bread-assortment.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(20deg);
 }
 @media screen and (min-width: 768px) {
   .footer::after {
-    width: 360px;
-    height: 190px;
-    background-image: url("../images/panine-desctop.png");
+    bottom: -180px;
+    right: 0;
+    width: 500px;
+    height: 300px;
+    background-image: url("../images/bread-assortment.png");
+    transform: rotate(20deg);
   }
 }
 .footer__container {
@@ -498,6 +575,11 @@ ul {
   gap: 22px;
   margin-bottom: 8px;
 }
+@media screen and (min-width: 768px) {
+  .footer__social {
+    justify-content: left;
+  }
+}
 .footer__address-icon {
   fill: var(--color-primary-liht);
 }
@@ -521,7 +603,7 @@ ul {
 }
 
 .contact-section {
-  padding: 0;
+  margin-top: 20px;
 }
 .contact-section__container {
   display: flex;
@@ -537,24 +619,23 @@ ul {
 .contact-section__title {
   font-weight: 600;
   font-size: 32px;
-  line-height: 1;
   text-align: center;
   margin-bottom: 8px;
 }
 @media screen and (min-width: 768px) {
   .contact-section__title {
+    font-size: 64px;
     text-align: left;
     margin-bottom: 16px;
   }
 }
 .contact-section__text {
-  font-size: 14px;
-  line-height: 1;
   margin-bottom: 24px;
 }
 @media screen and (min-width: 768px) {
   .contact-section__text {
     margin-bottom: 42px;
+    line-height: 1;
   }
 }
 .contact-section__form-field {
@@ -623,6 +704,9 @@ ul {
   }
 }
 
+.form-terms {
+  text-align: center;
+}
 @media screen and (min-width: 768px) {
   .form-terms {
     margin: 0 auto;
@@ -643,7 +727,6 @@ ul {
   margin: 0 auto 24px;
 }*/
 .header {
-  padding-top: 16px;
   position: absolute;
   top: 0;
   left: 0;
@@ -710,6 +793,7 @@ ul {
 @media screen and (min-width: 1280px) {
   .hero-section {
     padding: 272px 0;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -744,20 +828,62 @@ ul {
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
+  padding-top: 16px;
   background-color: var(--color-primary-liht);
   transform: translateX(100%);
   transition: transform 0.3s;
+  z-index: 2;
 }
 .mobile-menu.is-open {
   transform: translateX(0);
 }
-.mobile-menu__btn-close {
+.mobile-menu__logo {
+  fill: var(--color-primary-dark);
+}
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-left: 24px;
+}
+.mobile-menu__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-menu__link {
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+.mobile-menu__link:hover {
+  font-size: 600;
+}
+.mobile-menu__decor {
   position: absolute;
-  top: 16px;
-  right: 24px;
+  right: 0;
+  bottom: 0;
+}
+.mobile-menu__decor::before, .mobile-menu__decor::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+}
+.mobile-menu__decor::before {
+  width: 138px;
+  height: 138px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-image: url(../../images/manu-decor-litter.svg);
+}
+.mobile-menu__decor::after {
+  width: 147px;
+  height: 231px;
+  background-image: url(../../images/bread-single.png);
 }
 
 .backdrop {
@@ -795,11 +921,6 @@ ul {
     padding: 128px;
   }
 }
-.modal__btn-close {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-}
 .modal__form-field {
   margin-bottom: 32px;
 }
@@ -807,12 +928,16 @@ ul {
   margin: 0 auto 24px;
 }
 .modal__title {
-  font-size: 64px;
-  font-weight: 900;
+  font-size: 32px;
   line-height: 1.3;
+  text-align: center;
   margin: 0 auto;
-  white-space: nowrap;
   margin-bottom: 8px;
+}
+@media screen and (min-width: 768px) {
+  .modal__title {
+    font-size: 64px;
+  }
 }
 .modal__text {
   font-weight: 400;
@@ -820,6 +945,31 @@ ul {
   line-height: 1;
   text-align: center;
   margin-bottom: 72px;
+  color: var(--color-brend-dark);
+}
+.modal__decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.modal__decor::before, .modal__decor::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+}
+.modal__decor::before {
+  width: 138px;
+  height: 138px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-image: url(../../images/manu-decor-litter.svg);
+}
+.modal__decor::after {
+  width: 147px;
+  height: 231px;
+  background-image: url(../../images/bread-single.png);
 }
 
 .section {
@@ -833,7 +983,6 @@ ul {
 .section__title {
   font-size: 32px;
   font-weight: 900;
-  line-height: 1.5;
 }
 @media screen and (min-width: 768px) {
   .section__title {
@@ -861,7 +1010,6 @@ ul {
 }
 .traditions-section__title {
   margin-bottom: 24px;
-  line-height: 1;
 }
 @media screen and (min-width: 768px) {
   .traditions-section__title {

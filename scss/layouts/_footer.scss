@@ -1,6 +1,7 @@
 .footer {
   padding: 32px 0;
   position: relative;
+  overflow: hidden;
   background-image:
     linear-gradient(rgba(49, 38, 26, 1), rgba(46, 47, 66, 0.7)),
     url('../images/footer-background.png');
@@ -8,39 +9,54 @@
   background-size: cover;
   background-position: center;
 
-  &::before,
-  &::after {
-    position: absolute;
-    bottom: 0;
-    background-repeat: no-repeat;
-    content: '';
-  }
+  // &::before,
+  // &::after {
+
+  //   bottom: 0;
+  //   background-repeat: no-repeat;
+
+  // }
   &::before {
-    top: 0;
-    margin-top: 60px;
+    position: absolute;
+    content: '';
+    top: 48px;
+    left: -50px; // Додаємо координату
     width: 92px;
     height: 196px;
-
-    background-image: url('../images/pane-solo-mob.png');
+    background-image: url('../images/bread-single.png');
+    background-size: contain; // Щоб картинка не деформувалася
+    background-repeat: no-repeat;
+    transform: rotate(32deg);
 
     @media screen and (min-width: $bp-tablet) {
+      top: 110px;
+      left: -72px;
       width: 180px;
-      height: 120px;
-      left: 0;
-      background-image: url('../images/pane-solo.png');
+      height: 342px;
+      background-image: url('../images/bread-single.png');
+      transform: rotate(10.4deg);
     }
   }
 
   &::after {
-    width: 102px;
-    height: 92px;
-    right: 0;
-    background-image: url('../../images/panine-mobile.png');
+    position: absolute;
+    content: '';
+    bottom: -100px; // Закріплюємо знизу
+    right: -30px; // Закріплюємо справа
+    width: 200px;
+    height: 200px;
+    background-image: url('../../images/bread-assortment.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(20deg);
 
     @media screen and (min-width: $bp-tablet) {
-      width: 360px;
-      height: 190px;
-      background-image: url('../images/panine-desctop.png');
+      bottom: -180px;
+      right: 0;
+      width: 500px;
+      height: 300px;
+      background-image: url('../images/bread-assortment.png');
+      transform: rotate(20deg);
     }
   }
 
@@ -120,6 +136,9 @@
     justify-content: center;
     gap: 22px;
     margin-bottom: 8px;
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: left;
+    }
   }
 
   &__address-icon {

@@ -2,8 +2,8 @@
   color: var(--color-primary-liht);
   text-decoration: none;
   transition: color 0.3s;
-}
 
-.link:hover {
-  color: var(--color-brend-normal);
+  &:hover {
+    color: var(--color-brend-normal);
+  }
 }

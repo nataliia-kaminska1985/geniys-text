@@ -1,7 +1,9 @@
 .advantages-section {
   margin-bottom: 20px;
+
   @media screen and (min-width: $bp-tablet) {
     background-color: var(--color-brend-normal);
+    margin-bottom: 0;
   }
   &__list {
     display: flex;
@@ -17,16 +19,16 @@
       gap: 40px;
       background-color: transparent;
       border-radius: 0;
-      padding: 0;
+      padding: 16px 0;
     }
   }
   &__item {
     font-size: 14px;
-    line-height: 1;
 
     @media screen and (min-width: $bp-tablet) {
       color: var(--color-primary-liht);
       font-size: 20px;
+      text-align: center;
     }
   }
 }

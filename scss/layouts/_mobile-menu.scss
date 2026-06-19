@@ -1,19 +1,70 @@
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
+  padding-top: 16px;
   background-color: var(--color-primary-liht);
   transform: translateX(100%);
   transition: transform 0.3s;
+  z-index: 2;
 
   &.is-open {
     transform: translateX(0);
   }
-  &__btn-close {
+
+  &__logo {
+    fill: var(--color-primary-dark);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-left: 24px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: var(--color-primary-dark);
+    margin-bottom: 16px;
+
+    &:hover {
+      font-size: 600;
+    }
+  }
+  &__decor {
     position: absolute;
-    top: 16px;
-    right: 24px;
+    right: 0;
+    bottom: 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      right: 0;
+      bottom: 0;
+    }
+
+    &::before {
+      width: 138px;
+      height: 138px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-image: url(../../images/manu-decor-litter.svg);
+    }
+
+    &::after {
+      width: 147px;
+      height: 231px;
+      background-image: url(../../images/bread-single.png);
+    }
   }
 }
